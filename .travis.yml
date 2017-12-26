@@ -1,0 +1,17 @@
+
+
+addons:
+  apt:
+    packages:
+    - gcc
+    - gperf
+    - bison
+    - flex
+    - texinfo
+    - help2man
+    - make
+    - libncurses5-dev
+    - python-dev
+
+script:
+- bash -x 02_LearningAboutToolchains/create-toolchain.sh
