@@ -14,4 +14,4 @@ addons:
     - python-dev
 
 script:
-- bash -x 02_LearningAboutToolchains/create-toolchain.sh
+- travis_wait 60 bash -x 02_LearningAboutToolchains/create-toolchain.sh

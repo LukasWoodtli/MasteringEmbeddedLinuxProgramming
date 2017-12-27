@@ -12,7 +12,9 @@ thisScriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd ${thisScriptDir}
 
-git clone https://github.com/crosstool-ng/crosstool-ng crosstool-ng
+rm -rf crosstool-ng/
+
+git clone --depth=1 https://github.com/crosstool-ng/crosstool-ng crosstool-ng
 
 
 cd crosstool-ng
