@@ -27,7 +27,7 @@ make install
 # add the configuration
 cp -f ${thisScriptDir}/dot.config ${thisScriptDir}/crosstool-ng/.config
 # build the toolchain
-./ct-ng build
+./ct-ng build.2
 
 
 # test
