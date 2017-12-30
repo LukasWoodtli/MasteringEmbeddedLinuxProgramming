@@ -1,3 +1,7 @@
 crosstool-ng/
 gcc-config.txt
 helloworld
+helloworld-static
+helloworld-with-static-lib
+*.o
+*.a
