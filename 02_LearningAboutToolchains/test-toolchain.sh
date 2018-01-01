@@ -63,8 +63,25 @@ arm-cortex_a8-linux-gnueabihf-gcc -c test1.c
 arm-cortex_a8-linux-gnueabihf-gcc -c test2.c
 arm-cortex_a8-linux-gnueabihf-ar rc libtest.a test1.o test2.o
 
-# link to library
-arm-cortex_a8-linux-gnueabihf-gcc helloworld-with-static-lib.c -ltest -L./ -o helloworld-with-static-lib
+# link to static library
+arm-cortex_a8-linux-gnueabihf-gcc helloworld-with-lib.c -ltest -L./ -o helloworld-with-static-lib
 arm-cortex_a8-linux-gnueabihf-nm helloworld-with-static-lib | grep helloWorld1
 arm-cortex_a8-linux-gnueabihf-nm helloworld-with-static-lib | grep helloWorld1
+
+
+# dynamic linking (shared libraries)
+
+# create shared object (dso)
+arm-cortex_a8-linux-gnueabihf-gcc -fPIC -c test1.c
+arm-cortex_a8-linux-gnueabihf-gcc -fPIC -c test2.c
+arm-cortex_a8-linux-gnueabihf-gcc -shared -o libtest.so test1.o test2.o
+
+# link dso
+arm-cortex_a8-linux-gnueabihf-gcc helloworld-with-lib.c -ltest -L./ -o helloworld-with-dynamic-lib
+
+# check if dynamically linked
+# a libc is linked automatically (e.g. libc.so.6)
+arm-cortex_a8-linux-gnueabihf-readelf -a helloworld-with-dynamic-lib | grep "Shared library" | grep "libc.so"
+# a interpreter is set (e.g /lib/ld-linux-armhf.so.3)
+arm-cortex_a8-linux-gnueabihf-readelf -a helloworld-with-dynamic-lib | grep "program interpreter" | grep "/lib/ld-linux-armhf.so"
 

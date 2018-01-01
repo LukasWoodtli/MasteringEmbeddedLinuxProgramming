@@ -3,5 +3,7 @@ gcc-config.txt
 helloworld
 helloworld-static
 helloworld-with-static-lib
+helloworld-with-dynamic-lib
 *.o
 *.a
+*.so
