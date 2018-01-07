@@ -74,7 +74,8 @@ arm-cortex_a8-linux-gnueabihf-nm helloworld-with-static-lib | grep helloWorld1
 # create shared object (dso)
 arm-cortex_a8-linux-gnueabihf-gcc -fPIC -c test1.c
 arm-cortex_a8-linux-gnueabihf-gcc -fPIC -c test2.c
-arm-cortex_a8-linux-gnueabihf-gcc -shared -o libtest.so test1.o test2.o
+# link to an dso and set SONAME
+arm-cortex_a8-linux-gnueabihf-gcc -shared -Wl,-soname,libtest.so.1 -o libtest.so test1.o test2.o
 
 # link dso
 arm-cortex_a8-linux-gnueabihf-gcc helloworld-with-lib.c -ltest -L./ -o helloworld-with-dynamic-lib
@@ -82,6 +83,10 @@ arm-cortex_a8-linux-gnueabihf-gcc helloworld-with-lib.c -ltest -L./ -o helloworl
 # check if dynamically linked
 # a libc is linked automatically (e.g. libc.so.6)
 arm-cortex_a8-linux-gnueabihf-readelf -a helloworld-with-dynamic-lib | grep "Shared library" | grep "libc.so"
+# our library is linked as well
+arm-cortex_a8-linux-gnueabihf-readelf -a helloworld-with-dynamic-lib | grep "Shared library" | grep "libtest.so"
 # a interpreter is set (e.g /lib/ld-linux-armhf.so.3)
 arm-cortex_a8-linux-gnueabihf-readelf -a helloworld-with-dynamic-lib | grep "program interpreter" | grep "/lib/ld-linux-armhf.so"
 
+# Check if SONAME is set properly
+readelf -a libtest.so | grep "SONAME" | grep "libtest.so.1"
