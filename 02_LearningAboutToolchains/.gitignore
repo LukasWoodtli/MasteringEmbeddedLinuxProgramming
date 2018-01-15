@@ -7,3 +7,5 @@ helloworld-with-dynamic-lib
 *.o
 *.a
 *.so
+sqlite-autoconf-3081101.tar.gz
+sqlite-autoconf-3081101/

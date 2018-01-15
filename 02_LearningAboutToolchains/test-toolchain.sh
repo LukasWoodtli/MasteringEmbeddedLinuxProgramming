@@ -35,6 +35,8 @@ grep -e "--enable-threads=posix" gcc-config.txt
 # sys root of the toolchain
 sysRootDir=$(arm-cortex_a8-linux-gnueabihf-gcc -print-sysroot)
 
+echo "The sysroot is: " $sysRootDir
+
 # dynamic linking
 
 # a libc is linked automatically (e.g. libc.so.6)
