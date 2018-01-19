@@ -9,3 +9,4 @@ helloworld-with-dynamic-lib
 *.so
 sqlite-autoconf-3081101.tar.gz
 sqlite-autoconf-3081101/
+sqlite-test

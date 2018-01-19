@@ -50,3 +50,16 @@ else
   echo fail
   exit -1
 fi
+
+
+# compile small example
+rm -f sqlite-test
+
+# get flags from pkg-config
+compileFlags=$(PKG_CONFIG_LIBDIR=$(arm-cortex_a8-linux-gnueabihf-gcc -print-sysroot)/usr/lib/pkgconfig pkg-config sqlite3 --libs --cflags)
+
+# build
+arm-cortex_a8-linux-gnueabihf-gcc $compileFlags sqlite-test.c -o sqlite-test
+
+# check if example was cross-compiled
+file sqlite-test | grep "ARM"
