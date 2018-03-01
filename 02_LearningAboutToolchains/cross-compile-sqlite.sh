@@ -20,12 +20,15 @@ rm -f sqlite-autoconf-3081101.tar.gz
 wget http://www.sqlite.org/2015/sqlite-autoconf-3081101.tar.gz
 # unpack
 tar xf sqlite-autoconf-3081101.tar.gz
-cd sqlite-autoconf-3081101
+
+pushd sqlite-autoconf-3081101
 
 # configure
 CC=arm-cortex_a8-linux-gnueabihf-gcc ./configure --host=arm-cortex_a8-linux-gnueabihf --prefix=/usr
 # make install
 make DESTDIR=$(arm-cortex_a8-linux-gnueabihf-gcc -print-sysroot) install
+
+popd
 
 # some checks
 # executable
