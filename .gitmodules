@@ -1,3 +1,6 @@
 [submodule "03_AllAboutBootloaders/u-boot"]
 	path = 03_AllAboutBootloaders/u-boot
 	url = git://git.denx.de/u-boot.git
+[submodule "02_LearningAboutToolchains/crosstool-ng"]
+	path = 02_LearningAboutToolchains/crosstool-ng
+	url = https://github.com/crosstool-ng/crosstool-ng

@@ -10,14 +10,7 @@ thisScriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 #sudo dnf install autoconf gperf bison flex texinfo help2man gcc-c++ patch ncurses-devel python-devel perl-Thread-Queue git libtool
 
 
-cd ${thisScriptDir}
-
-rm -rf crosstool-ng/
-
-git clone --depth=1 https://github.com/crosstool-ng/crosstool-ng crosstool-ng
-
-
-cd crosstool-ng
+cd ${thisScriptDir}/crosstool-ng
 
 ./bootstrap
 ./configure --enable-local
