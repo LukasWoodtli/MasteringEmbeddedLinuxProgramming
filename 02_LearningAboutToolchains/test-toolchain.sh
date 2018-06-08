@@ -21,7 +21,8 @@ file helloworld | grep ARM
 
 # check configuration of cross-toolchain
 arm-cortex_a8-linux-gnueabihf-gcc -v &> gcc-config.txt
-grep -e "--with-sysroot=/home/$USER/x-tools/arm-cortex_a8-linux-gnueabihf/arm-cortex_a8-linux-gnueabihf/sysroot" gcc-config.txt
+sysRoot=~/x-tools/arm-cortex_a8-linux-gnueabihf/arm-cortex_a8-linux-gnueabihf/sysroot
+grep -e "--with-sysroot=$sysRoot" gcc-config.txt
 grep -e "--enable-languages=c,c++" gcc-config.txt
 # This is not set (but should be according to the book):
 # grep -e "--with-arch=armv7-a" gcc-config.txt
