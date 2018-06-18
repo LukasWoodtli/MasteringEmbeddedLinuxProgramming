@@ -10,7 +10,7 @@ cd ${thisScriptDir}
 
 
 # test
-export PATH=~/x-tools/arm-cortex_a8-linux-gnueabihf/bin/:$PATH
+export PATH=$thisScriptDir/x-tools/arm-cortex_a8-linux-gnueabihf/bin/:$PATH
 cd ${thisScriptDir}
 
 # build example
@@ -21,7 +21,7 @@ file helloworld | grep ARM
 
 # check configuration of cross-toolchain
 arm-cortex_a8-linux-gnueabihf-gcc -v &> gcc-config.txt
-sysRoot=~/x-tools/arm-cortex_a8-linux-gnueabihf/arm-cortex_a8-linux-gnueabihf/sysroot
+sysRoot=$thisScriptDir/x-tools/arm-cortex_a8-linux-gnueabihf/arm-cortex_a8-linux-gnueabihf/sysroot
 grep -e "--with-sysroot=$sysRoot" gcc-config.txt
 grep -e "--enable-languages=c,c++" gcc-config.txt
 # This is not set (but should be according to the book):

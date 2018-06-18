@@ -10,7 +10,7 @@ cd ${thisScriptDir}
 
 
 # toolchain
-export PATH=~/x-tools/arm-cortex_a8-linux-gnueabihf/bin/:$PATH
+export PATH=$thisScriptDir/x-tools/arm-cortex_a8-linux-gnueabihf/bin/:$PATH
 cd ${thisScriptDir}
 
 
