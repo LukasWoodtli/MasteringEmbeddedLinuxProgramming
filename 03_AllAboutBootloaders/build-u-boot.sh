@@ -7,7 +7,7 @@ set -u
 thisScriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
-export PATH=~/x-tools/arm-cortex_a8-linux-gnueabihf/bin/:$PATH
+export PATH=$thisScriptDir/../02_LearningAboutToolchains/x-tools/arm-cortex_a8-linux-gnueabihf/bin/:$PATH
 
 cd ${thisScriptDir}/u-boot
 
