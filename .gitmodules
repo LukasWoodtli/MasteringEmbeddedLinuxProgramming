@@ -4,3 +4,6 @@
 [submodule "02_LearningAboutToolchains/crosstool-ng"]
 	path = 02_LearningAboutToolchains/crosstool-ng
 	url = https://github.com/crosstool-ng/crosstool-ng
+[submodule "04_Kernel/linux-stable"]
+	path = 04_Kernel/linux-stable
+	url = git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
