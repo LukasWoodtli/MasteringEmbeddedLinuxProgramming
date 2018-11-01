@@ -1,0 +1,15 @@
+FROM lukaswoodtli/masteringembeddedlinuxprogramming
+
+MAINTAINER Lukas Woodtli "http://lukaswoodtli.github.io/"
+
+RUN useradd builder
+
+COPY . /src
+
+RUN chown -R builder:builder /src/
+
+RUN su - builder -c  "/src/02_LearningAboutToolchains/run-all.sh"
+
+ENV PATH=/src/02_LearningAboutToolchains/x-tools/arm-cortex_a8-linux-gnueabihf/bin/:$PATH
+
+ENTRYPOINT ["/bin/bash", "-l"]
