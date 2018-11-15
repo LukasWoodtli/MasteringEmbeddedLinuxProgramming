@@ -13,7 +13,17 @@ cd ${thisScriptDir}/crosstool-ng
 make
 make install
 
+
+# Beaglebone Black
 # add the configuration
-cp -f ${thisScriptDir}/dot.config ${thisScriptDir}/crosstool-ng/.config
+#cp -f ${thisScriptDir}/dot.config ${thisScriptDir}/crosstool-ng/.config
+# build the toolchain
+#./ct-ng build.2
+
+
+# QEMU
+./ct-ng distclean
+cp -f ${thisScriptDir}/dot.config.qemu ${thisScriptDir}/crosstool-ng/.config
 # build the toolchain
 ./ct-ng build.2
+
