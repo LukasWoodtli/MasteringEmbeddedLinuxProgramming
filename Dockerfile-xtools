@@ -2,6 +2,8 @@ FROM lukaswoodtli/masteringembeddedlinuxprogramming
 
 MAINTAINER Lukas Woodtli "http://lukaswoodtli.github.io/"
 
+# This docker is not tested and not used (kept just for reference)
+
 RUN useradd builder
 
 COPY . /src

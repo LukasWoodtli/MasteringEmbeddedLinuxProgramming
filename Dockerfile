@@ -5,6 +5,7 @@ MAINTAINER Lukas Woodtli "http://lukaswoodtli.github.io/"
 RUN apt-get update && \
 	apt-get install -y --force-yes \
 	automake \
+	bc \
 	bison \
 	chrpath \
 	flex \
