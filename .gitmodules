@@ -7,3 +7,7 @@
 [submodule "04_Kernel/linux-stable"]
 	path = 04_Kernel/linux-stable
 	url = git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+[submodule "06_SelectingBuildSystem/poky"]
+	path = 06_SelectingBuildSystem/poky
+	url = git://git.yoctoproject.org/poky.git
+	branch = morty
