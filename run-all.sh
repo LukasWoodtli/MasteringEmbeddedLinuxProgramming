@@ -10,3 +10,5 @@ cd ${thisScriptDir}
 
 ./02_LearningAboutToolchains/run-all.sh
 ./03_AllAboutBootloaders/run-all.sh
+./04_Kernel/run-all.sh
+
