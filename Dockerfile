@@ -8,6 +8,7 @@ RUN apt-get update && \
 	bc \
 	bison \
 	chrpath \
+	diffstat \
 	flex \
 	gawk \
 	git \
@@ -18,12 +19,17 @@ RUN apt-get update && \
 	libncurses5-dev \
 	libsdl1.2-dev \
 	libtool \
+	locales \
 	make \
 	texinfo \
 	unzip \
 	wget \
 	xz-utils
 
-RUN apt-get clean
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+ENV LANG en_US.utf8
 
 ENTRYPOINT ["/bin/bash", "-l"]
+
