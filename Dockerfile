@@ -22,6 +22,7 @@ RUN apt-get update && \
 	locales \
 	make \
 	texinfo \
+	uml-utilities \
 	unzip \
 	wget \
 	xz-utils

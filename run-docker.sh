@@ -6,6 +6,7 @@ set -u
 thisScriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # get container from docker hub (docker.io)
+docker pull lukaswoodtli/masteringembeddedlinuxprogramming:latest
 dockerContainer="docker.io/lukaswoodtli/masteringembeddedlinuxprogramming"
 
 # use locally built container (using build-docker.sh)
