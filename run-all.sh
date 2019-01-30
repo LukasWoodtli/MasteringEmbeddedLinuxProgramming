@@ -12,3 +12,4 @@ cd ${thisScriptDir}
 ./03_AllAboutBootloaders/run-all.sh
 ./04_Kernel/run-all.sh
 
+./12_ProcessesAndThreads/run-all.sh
