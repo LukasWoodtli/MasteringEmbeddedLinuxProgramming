@@ -13,3 +13,4 @@ cd ${thisScriptDir}
 ./04_Kernel/run-all.sh
 
 ./12_ProcessesAndThreads/run-all.sh
+./13_ManagingMemory/run-all.sh
