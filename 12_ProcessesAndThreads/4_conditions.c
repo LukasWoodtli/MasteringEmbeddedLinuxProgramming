@@ -7,6 +7,13 @@
 char g_data[128];
 pthread_cond_t cv = PTHREAD_COND_INITIALIZER;
 pthread_mutex_t mutx = PTHREAD_MUTEX_INITIALIZER;
+
+/* Note that when the consumer thread blocks on the `condvar`, it does so
+ * while holding a locke'd mutex, which would seem to be a recipe for
+ * deadlock the next time the producer thread tries to update the
+ * condition. To avoid this, `pthread_condwait(3)` unlocks the mutex after
+ * the thread is blocked, and then locks it again before waking it and
+ * returning from the wait. */
 void *consumer(void *arg) {
   while (1) {
     pthread_mutex_lock(&mutx);
@@ -19,6 +26,7 @@ void *consumer(void *arg) {
   }
   return NULL;
 }
+
 void *producer(void *arg) {
   int i = 0;
   while (1) {
