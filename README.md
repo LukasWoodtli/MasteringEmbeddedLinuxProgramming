@@ -13,7 +13,7 @@ Examples for https://www.packtpub.com/networking-and-servers/mastering-embedded-
 | 3       | All About Bootloaders               |   ✓  |
 | 4       | Configuring and Building the Kernel |   ✓  |
 | 5       | Building a Root Filesystem          |   ✓  |
-| 6       | Selecting a Build System            |      |
+| 6       | Selecting a Build System            |   ✓  |
 | 7       | Creating a Storage Strategy         |   ✓  |
 | 8       | Updating Software in the Field      |   ✓  |
 | 9       | Interfacing with Device Drivers     |   ✓  |
